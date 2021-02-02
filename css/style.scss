@@ -1,0 +1,278 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  color: #444;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+button.open_modal {
+  padding: 20px 80px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: slateblue;
+  color: #fff;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3),
+    -1px -1px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+div.current_day_of_code {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 15px 20px;
+  background: #fff;
+  color: #222;
+  border-radius: 30px;
+}
+
+button.close_modal {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  color: #fff;
+  background: red;
+  font-size: 30px;
+  font-weight: bold;
+  transform: scale(0.6);
+  z-index: 20000;
+  transition: transform 500ms;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1);
+  }
+}
+
+div.overview {
+  div.overview_left {
+    height: 300px;
+    // position: sticky;
+    // top: 0;
+    background: dodgerblue;
+    color: #fff;
+    padding: 25px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    div.balance {
+      text-align: center;
+      padding: 20px 0;
+      p.total_balance_title {
+        font-size: 1em;
+        margin-bottom: 15px;
+      }
+
+      h1.actual_balance {
+      }
+    }
+
+    div.spent_and_earned {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 15px;
+      div.spent,
+      div.earned {
+        padding: 10px;
+        background: #fff;
+        text-align: center;
+        color: #333;
+        border-radius: 8px;
+
+        p.title {
+          font-size: 14px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    div.action_container {
+      position: relative;
+      background: #fff;
+      color: #333;
+      display: flex;
+      bottom: -30px;
+      left: 50%;
+      padding: 20px;
+      border-radius: 10px;
+      transform: translateX(-50%);
+      align-items: center;
+      justify-content: space-evenly;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2),
+        -1px 1px 3px rgba(0, 0, 0, 0.2);
+      margin: 0 auto;
+
+      div.action {
+        text-align: center;
+        svg {
+          font-size: 24px;
+          color: dodgerblue;
+        }
+        p {
+          padding-top: 8px;
+        }
+      }
+    }
+  }
+
+  div.overview_right {
+    padding: 0 0;
+    padding-top: 80px;
+    padding-bottom: 70px;
+    h2.title {
+      padding-bottom: 15px;
+      padding-left: 25px;
+    }
+
+    div.filter_by_container {
+      display: flex;
+      overflow-x: scroll;
+      padding-left: 25px;
+      padding-right: 20px;
+      button.filter_button {
+        padding: 8px 20px;
+        margin-right: 20px;
+        border-radius: 20px;
+        font-size: 0.8em;
+        background: rgb(231, 216, 216);
+        &.active {
+          background: slateblue;
+          color: #fff;
+        }
+      }
+    }
+
+    div.list_of_transactions {
+      padding: 20px 25px;
+      div.transaction {
+        display: grid;
+        align-items: center;
+        padding: 15px 0;
+        grid-template-columns: 40px auto;
+        grid-column-gap: 10px;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+
+        div.container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          div.name_and_time {
+            h4 {
+              padding-bottom: 5px;
+            }
+
+            span {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+
+    nav.navigation {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 70px;
+      background-color: #fff;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      box-shadow: -2px -2px 15px rgba(0, 0, 0, 0.2);
+      align-items: center;
+      div.link_container {
+        text-align: center;
+        a {
+          font-size: 20px;
+          color: #bbb;
+          border-radius: 10px;
+          &.active {
+            background: dodgerblue;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 660px) {
+  body {
+    height: 100vh;
+    position: relative;
+    background: #333;
+    div.overview {
+      display: grid;
+      border-radius: 10px;
+      width: 650px;
+      height: 500px;
+      box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2),
+        -1px -1px 15px rgba(0, 0, 0, 0.2);
+      grid-template-columns: 300px 1fr;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      div.overview_left {
+        height: auto;
+      }
+
+      div.overview_right {
+        background: #fff;
+        overflow-x: hidden;
+        position: relative;
+        padding-top: 0px;
+        padding-bottom: 70px;
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: dodgerblue;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #eee;
+        }
+        div.filter_by_container {
+          flex-wrap: wrap;
+          overflow: auto;
+          button.filter_button {
+            margin-bottom: 10px;
+          }
+        }
+        div.list_of_transactions {
+          padding-bottom: 0;
+        }
+        h2.title {
+          padding-top: 20px;
+        }
+        nav.navigation {
+          position: sticky;
+          width: 100%;
+          right: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+}

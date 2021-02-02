@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 3</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="current_day_of_code"><h5>#day 3 of 100</h5></div>
+    <div class="overview">
+      <div class="overview_left">
+        <div class="balance">
+          <p class="total_balance_title">Total Balance</p>
+          <h1 class="actual_balance">$13,790</h1>
+        </div>
+        <div class="spent_and_earned">
+          <div class="spent">
+            <p class="title">Spent</p>
+            <h3 class="amount">$3,790</h3>
+          </div>
+          <div class="earned">
+            <p class="title">Earned</p>
+            <h3 class="amount">$12,790</h3>
+          </div>
+        </div>
+        <div class="action_container">
+          <div class="action">
+            <FaUpload />
+            <p>Transfer</p>
+          </div>
+          <div class="action">
+            <FaMobileAlt />
+            <p>Top Up</p>
+          </div>
+          <div class="action">
+            <FaWallet />
+            <p>Payments</p>
+          </div>
+        </div>
+      </div>
+      <div class="overview_right">
+        <h2 class="title">Transactions</h2>
+        <div class="filter_by_container">
+          <button class="filter_button active">All</button>
+          <button class="filter_button">Rent</button>
+          <button class="filter_button">Shopping</button>
+          <button class="filter_button">Gaming</button>
+          <button class="filter_button">Food</button>
+          <button class="filter_button">Recreation</button>
+        </div>
+        <div class="list_of_transactions">
+          <div class="transaction">
+            <img src="assets/tesla.svg" class="logo" alt="tesla" />
+            <div class="container">
+              <div class="name_and_time">
+                <h4>Tesla</h4>
+                <span>25 Feb, 6:45pm</span>
+              </div>
+              <h4>-$178</h4>
+            </div>
+          </div>
+          <div class="transaction">
+            <img src="assets/quora.svg" class="logo" alt="tesla" />
+            <div class="container">
+              <div class="name_and_time">
+                <h4>Quora</h4>
+                <span>25 Feb, 6:45pm</span>
+              </div>
+              <h4>-$78</h4>
+            </div>
+          </div>
+          <div class="transaction">
+            <img src="assets/dribble.svg" class="logo" alt="tesla" />
+            <div class="container">
+              <div class="name_and_time">
+                <h4>Dribble</h4>
+                <span>25 Feb, 2:45pm</span>
+              </div>
+              <h4>-$780</h4>
+            </div>
+          </div>
+          <div class="transaction">
+            <img src="assets/duckgo.svg" class="logo" alt="tesla" />
+            <div class="container">
+              <div class="name_and_time">
+                <h3>Duckgogo</h3>
+                <span>21 Feb, 5:45pm</span>
+              </div>
+              <h4>+$2000</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
